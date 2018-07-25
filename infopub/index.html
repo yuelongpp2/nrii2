@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>提需求-首页</title> 
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/materialize/css/materialize.min.css" media="screen,projection" />
+    <!-- Bootstrap Styles-->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="../assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="../assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="../assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/hyPC.css">
+    <!-- 自定义样式 -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+    <link rel="stylesheet" href="../assets/js/Lightweight-Chart/cssCharts.css">
+        <!-- jQuery Js -->
+    <script src="../assets/js/jquery-1.10.2.js"></script>
+    <script src="../assets/js/echarts-all.js"></script>
+     <script src="../assets/js/index.js"></script>
+    <script type="text/javascript">
+	$(function(){
+	    $(".hy-wfq-content").find("li:even").addClass("hy-backC");
+	      
+	      var currTopHtml="infopub";
+          var currLeftHtml=CommonUtils.GetQueryString("type");
+       
+          if(currLeftHtml ==null){
+          	currLeftHtml=1;
+          }
+          CommonUtils.GridManage(currTopHtml,currLeftHtml);
+ 
+	 }); 
+
+    function weixin(){
+
+    }
+
+
+function Share(pType){
+
+        var pTitle = ""; //待分享的标题
+
+        var pImage = ""; //待分享的图片
+
+        var pContent = ""; //待分享的内容
+
+        var pUrl = window.location.href; //当前的url地址
+
+        var pObj = jQuery("div[class='yogo_hc']").find("h4");
+
+        if(pObj.length){
+
+            pTitle = pObj.text();
+
+        }
+
+        var pObj = jQuery("div[class='yogo_hcs']").find("em");
+
+        if(pObj.length){
+
+            pContent = pObj.text();
+
+        }
+
+       var pObj = jQuery("div[class='con_cons']").find("img");
+
+       if(pObj.length){
+
+           pImage = jQuery("div[class='con_cons']").find("img",0).attr("src");
+
+       }
+
+        shareys(pType, pUrl, pTitle, "", pContent);
+
+    }
+
+//以下shareys是主要的分享的api接口
+
+function shareys(type, url, title, img, content){
+
+  switch (type) {
+
+      case "sina":
+
+          url = "http://service.weibo.com/share/share.php?title=" + encodeURIComponent(content + '「' + title + '」' + ' 点这里' + url) + '&pic=' + img;
+
+          window.open(url);
+
+          break;
+
+      case "tqq":
+
+          url = "http://share.v.t.qq.com/index.php?c=share&a=index&url=" + encodeURIComponent(url) + '&title=' + encodeURIComponent(title) + '&pic=' + img;
+
+          window.open(url);
+
+          break;
+
+      case "qzone":
+
+           url = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title) + '&site=&pics=' + encodeURIComponent(img) + '&desc=' + encodeURIComponent(content) +'&summary=' + encodeURIComponent(content);
+
+          window.open(url);
+
+          break;
+
+      case "ren":
+
+          url = 'http://widget.renren.com/dialog/share?resourceUrl=' + encodeURIComponent(url) + '&srcUrl=' + img + '&title=' + encodeURIComponent(title);
+
+          +'&description=' + content;
+
+          window.open(url);
+
+          break;
+
+      default:
+
+          break;
+
+  }
+
+}
+
+	</script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle waves-effect waves-dark" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand waves-effect waves-dark hy-logo" href="../index.html"><img src="../assets/img/logo.png"></a>
+				
+				<div id="sideNav" href=""><i class="material-icons dp48"  style="display: none;">toc</i></div>
+            </div>
+
+            <ul class="nav  navbar-left" id="navTop">
+            
+	
+
+            </ul>
+            
+            <ul class="nav navbar-top-links navbar-right">
+
+				<li><a href="javascript:;"><i class="glyphicon glyphicon-user"></i> <b>caoweijun</b>　|</a><a href="#"><b>退出</b></a></li>
+            </ul>
+        </nav>
+
+	   <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side hy-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li >
+                        <a class="active-menu waves-effect waves-dark" href="index.html" style="color:#808080 !important"><img src="../assets/img/gongzuotai.png">　工作台</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+      
+		<div id="page-wrapper">
+			<div class="header"> 
+	            <span class="page-header">
+	            当前需求一览
+
+
+	            </span>
+				
+
+                <div class="float-share">
+
+<ul>
+
+    <li class="share-title">分享到</li>
+
+    <li class="share-con clearfix bdsharebuttonbox">
+
+        <div class="share-way wechat" onclick="weixin()">  
+
+            <a href="javascript:void(0);" class="bds_weixin" data-cmd="weixin" title="分享到微信" >
+
+            <div class="txt">微信</div> 
+</a> 
+        </div>
+
+        <div class="share-way Qzone"> 
+
+            <a href="javascript:void(0);" onclick="javascript:Share('qzone')" class="bds_qzone" title="QQ空间">
+
+            <div class="txt">QQ空间</div></a>
+
+        </div>
+
+        <div class="share-way weibo" >
+
+            <a href="javascript:void(0);" onclick="javascript:Share('sina')" class="sina" title="分享到新浪微博">
+
+            <div class="txt">新浪微博</div>
+            </a> 
+
+        </div> 
+
+        <div class="share-way weibo" >
+
+            <a href="javascript:void(0);" onclick="javascript:Share('ren')" class="sina" title="分享到人人网"> 
+
+            <div class="txt">人人网</div>
+            </a>
+
+        </div> 
+
+    </li>
+
+</ul>
+
+</div>	
+
+
+<div class="bdsharebuttonbox"><a class="bds_more" href="#" data-cmd="more"></a><a title="分享到QQ空间" class="bds_qzone" href="#" data-cmd="qzone"></a><a title="分享到新浪微博" class="bds_tsina" href="#" data-cmd="tsina"></a><a title="分享到腾讯微博" class="bds_tqq" href="#" data-cmd="tqq"></a><a title="分享到人人网" class="bds_renren" href="#" data-cmd="renren"></a><a title="分享到微信" class="bds_weixin" href="#" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>				
+			</div>
+            
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->	
+	<!-- Bootstrap Js -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+	
+	<script src="../assets/materialize/js/materialize.min.js"></script>
+	
+    <!-- Metis Menu Js -->
+    <script src="../assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="../assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="../assets/js/morris/morris.js"></script>
+	
+	
+	<script src="../assets/js/easypiechart.js"></script>
+	<script src="../assets/js/easypiechart-data.js"></script>
+	
+	 <script src="../assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	
+    <!-- Custom Js -->
+    <script src="../assets/js/custom-scripts.js"></script> 
+ 
+
+</body>
+
+</html>

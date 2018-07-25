@@ -1,0 +1,720 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>提需求-首页</title> 
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/materialize/css/materialize.min.css" media="screen,projection" />
+    <!-- Bootstrap Styles-->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="../assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="../assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="../assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/hyPC.css">
+    <!-- 自定义样式 -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+    <link rel="stylesheet" href="../assets/js/Lightweight-Chart/cssCharts.css">
+        <!-- jQuery Js -->
+    <script src="../assets/js/jquery-1.10.2.js"></script>
+    <script src="../assets/js/echarts-all.js"></script>
+    <script type="text/javascript">
+	$(function(){
+	    $(".hy-wfq-content").find("li:even").addClass("hy-backC");
+	 }); 
+	</script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle waves-effect waves-dark" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand waves-effect waves-dark hy-logo" href="../index.html"><img src="../assets/img/logo.png"></a>
+				
+				<div id="sideNav" href=""><i class="material-icons dp48"  style="display: none;">toc</i></div>
+            </div>
+
+<ul class="nav  navbar-left">
+            
+				<li >
+                        <a href="../index.html" class="waves-effect waves-dark"><i ></i>首页</a>
+                    </li>
+					<li >
+                        <a href="weirenling.html" class="waves-effect waves-dark">平台咨询</a>
+                    </li>
+                    <li class="active">
+                        <a href="index.html" class="waves-effect waves-dark">仪器设备</a>
+                    </li>
+                    
+                    <li>
+                        <a href="yibanjie.html" class="waves-effect waves-dark">用户服务</a>
+                    </li>
+
+            </ul>
+            
+            <ul class="nav navbar-top-links navbar-right">
+
+				<li><a href="javascript:;"><i class="glyphicon glyphicon-user"></i> <b>caoweijun</b>　|</a><a href="#"><b>退出</b></a></li>
+            </ul>
+        </nav>
+
+	   <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side hy-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li >
+                        <a class="active-menu waves-effect waves-dark" href="index.html" style="color:#808080 !important"><img src="../assets/img/gongzuotai.png">　工作台</a>
+                    </li>
+                    <li >
+                        <a href="index.html" class="waves-effect waves-dark"><i class="glyphicon glyphicon-home"></i>基本信息管理</a>
+                    </li>
+					<li class="active">
+                        <a href="search.html" class="waves-effect waves-dark"><i class="glyphicon glyphicon-list"></i>预约信息查询</a>
+                    </li>
+                    <li>
+                        <a href="shenq.html" class="waves-effect waves-dark"><i class="glyphicon glyphicon-align-justify"></i>仪器预约申请</a>
+                    </li>
+                    
+                    <li>
+                        <a href="shenhe.html" class="waves-effect waves-dark"><i class="glyphicon glyphicon-check"></i>预约审核</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+      
+		<div id="page-wrapper">
+			<div class="header"> 
+	            <span class="page-header">
+	            当前需求一览
+	            </span>
+									
+			</div>
+            <div id="page-inner">
+
+			<div class="dashboard-cards hy-view-pb"> 
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3 hy-view">
+						<div class="hy-cards-left col-xs-4 col-sm-4 col-md-4">
+							<div class="hy-cards-l-img">
+								<img src="../assets/img/weirenling.png">
+							</div>
+						</div>
+						<div class="hy-cards-right col-xs-8 col-sm-8 col-md-8">
+							<div class="hy-cards-r-top col-xs-12 col-sm-12 col-md-12">
+								<div class="hy-cards-rt-l">
+									未认领
+									<span>51236</span>
+									件
+								</div>
+							</div>
+						</div>
+
+						<div class="hy-cards-ico col-xs-4 col-sm-4 col-md-4">
+							<div class="hy-ico col-xs-4 col-sm-4 col-md-4">
+								<img src="../assets/img/jinjidu-1.png">
+							</div>
+							<div class="hy-ico-text col-xs-7 col-sm-7 col-md-7">
+								456
+							</div>
+						</div>
+						<div class="hy-cards-ico col-xs-4 col-sm-4 col-md-4">
+							<div class="hy-ico col-xs-4 col-sm-4 col-md-4">
+								<img src="../assets/img/jinjidu-2.png">
+							</div>
+							<div class="hy-ico-text col-xs-7 col-sm-7 col-md-7">
+								456
+							</div>
+						</div>
+						<div class="hy-cards-ico col-xs-4 col-sm-4 col-md-4">
+							<div class="hy-ico col-xs-4 col-sm-4 col-md-4">
+								<img src="../assets/img/jinjidu-3.png">
+							</div>
+							<div class="hy-ico-text col-xs-7 col-sm-7 col-md-7">
+								456
+							</div>
+						</div>
+	 
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 hy-view">
+						<div class="hy-cards-left col-xs-4 col-sm-4 col-md-4">
+							<div class="hy-cards-l-img">
+								<img src="../assets/img/yirenling.png">
+							</div>
+						</div>
+						<div class="hy-cards-right col-xs-7 col-sm-7 col-md-7">
+							<div class="hy-cards-r-top col-xs-12 col-sm-12 col-md-12">
+								<div class="hy-cards-rt-l">
+									已认领
+									<span>5766</span>
+									件
+								</div>
+							</div>
+						</div>
+						<div class="hy-cards-ico col-xs-4 col-sm-4 col-md-4">
+							<div class="hy-ico col-xs-4 col-sm-4 col-md-4">
+								<img src="../assets/img/jinjidu-1.png">
+							</div>
+							<div class="hy-ico-text col-xs-7 col-sm-7 col-md-7">
+								456
+							</div>
+						</div>
+						<div class="hy-cards-ico col-xs-4 col-sm-4 col-md-4">
+							<div class="hy-ico col-xs-4 col-sm-4 col-md-4">
+								<img src="../assets/img/jinjidu-2.png">
+							</div>
+							<div class="hy-ico-text col-xs-7 col-sm-7 col-md-7">
+								456
+							</div>
+						</div>
+						<div class="hy-cards-ico col-xs-4 col-sm-4 col-md-4">
+							<div class="hy-ico col-xs-4 col-sm-4 col-md-4">
+								<img src="../assets/img/jinjidu-3.png">
+							</div>
+							<div class="hy-ico-text col-xs-7 col-sm-7 col-md-7">
+								456
+							</div>
+						</div>
+	 
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 hy-view">
+						<div class="hy-cards-left col-xs-4 col-sm-4 col-md-4">
+							<div class="hy-cards-l-img">
+								<img src="../assets/img/yibanjie.png">
+							</div>
+						</div>
+						<div class="hy-cards-right col-xs-7 col-sm-7 col-md-7">
+							<div class="hy-cards-r-top col-xs-12 col-sm-12 col-md-12">
+								<div class="hy-cards-rt-l">
+									已办结
+									<span>5766</span>
+									件
+								</div>
+							</div>
+						</div>
+						<div class="hy-cards-ico col-xs-4 col-sm-4 col-md-4">
+							<div class="hy-ico col-xs-4 col-sm-4 col-md-4">
+								<img src="../assets/img/jinjidu-1.png">
+							</div>
+							<div class="hy-ico-text col-xs-7 col-sm-7 col-md-7">
+								456
+							</div>
+						</div>
+						<div class="hy-cards-ico col-xs-4 col-sm-4 col-md-4">
+							<div class="hy-ico col-xs-4 col-sm-4 col-md-4">
+								<img src="../assets/img/jinjidu-2.png">
+							</div>
+							<div class="hy-ico-text col-xs-7 col-sm-7 col-md-7">
+								456
+							</div>
+						</div>
+						<div class="hy-cards-ico col-xs-4 col-sm-4 col-md-4">
+							<div class="hy-ico col-xs-4 col-sm-4 col-md-4">
+								<img src="../assets/img/jinjidu-3.png">
+							</div>
+							<div class="hy-ico-text col-xs-7 col-sm-7 col-md-7">
+								456
+							</div>
+						</div>
+	 
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3" style="padding: 0px;">
+						
+						<div class="hy-cards-right hy-wfq-bn col-xs-12 col-sm-12 col-md-12" style="padding: 0px;">
+							<div id="gbjzb" class="main" style="height:160px; ">
+
+	    					</div>
+	    					<script type="text/javascript">
+		    					var myChart = echarts.init(document.getElementById('gbjzb'));
+							    var infoDate3 = '2017-12-12';
+							    var data1 = 10;//未认领
+							    var data2 = 20;//已认领
+							    var data3 = 30;//已办结
+							    var option = {
+								    tooltip : {
+								        // trigger: 'item',
+								        formatter: "{b} : {c} ({d}%)",
+								        trigger: 'item',
+
+								        position : function(p) {
+								            return [p[0] + 10, p[1] - 10];
+								        },
+								        // formatter: function (params,ticket,callback) {
+								        //     // console.log(params);
+								        //     var res = params["name"]+'<br/>' + '占比' + ' : ' + params["value"];
+								        //     // for (var i = 0, l = params.length; i < l; i++) {
+								        //     //     res += '<br/>' + params[i].seriesName + ' : ' + params[i].value;
+								        //     // }
+								        //     setTimeout(function (){
+								        //         // 仅为了模拟异步回调
+								        //         callback(ticket, res);
+								        //     }, 500);
+								            
+								        //     return params["name"]+'<br/>' + '占比' + ' : ' + params["value"];
+								        // }
+								    },
+								    calculable : false,
+								    series : [
+								        {
+								            name:'访问来源',
+								            type:'pie',
+								            radius : [30, 50],
+								            
+								            // for funnel
+								            x: '40%',
+								            width: '10%',
+								            funnelAlign: 'left',
+								            max: 99999,
+								            label:{            //饼图图形上的文本标签
+					                            normal:{
+					                                show:true,
+					                                textStyle : {
+					                                    fontSize : 14    //文字的字体大小
+					                                }
+
+					                                
+					                            }
+					                        },
+								            data:[
+								                {value:data1, name:'未认领',itemStyle:{normal:{color:'#30c864'}}},
+								                {value:data2, name:'已认领',itemStyle:{normal:{color:'#f7a53a'}}},
+								                {value:data3, name:'已办结',itemStyle:{normal:{color:'#3e8be1'}}}
+								            ]
+								        }
+								    ]
+								};
+								myChart.on('click', function (params) {
+
+				                  alert(params["name"]);
+			                    });
+								myChart.setOption(option);
+					        	window.onresize = myChart.resize;
+
+							</script>
+						</div>
+	 
+                    </div>
+                </div>
+			</div>
+
+			<!-- 我发起的 -->
+			<div class="header"> 
+	            <span class="page-header hy-page-header">
+	            我发起的
+	            </span>
+				<a href="javascript:;"><span class="hy-more">
+	                更多 >
+	            </span>
+	            </a>
+			</div>
+			<div class="dashboard-cards">
+				<div class="row">
+					
+					<div class="hy-wfq-content col-md-4 col-sm-4 col-xs-4">
+						<div class="hy-wfq col-md-12 col-sm-12 col-xs-12">
+							<div class="hy-wfq-top col-md-12 col-sm-12 col-xs-12">
+								<div class="hy-wfq-img col-md-4 col-sm-4 col-xs-4">
+									未认领
+								</div>
+								<div class="hy-wfq-text col-md-8 col-sm-8 col-xs-8">1423件</div>
+							</div>
+
+						</div>
+						<ul class="col-md-12 col-sm-12 col-xs-12">
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-3.png">
+								</div>
+								<div class="hy-wfq-r col-md-7 col-sm-7  col-xs-7">
+									我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-4 col-sm-4  col-xs-4">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-2.png">
+								</div>
+								<div class="hy-wfq-r col-md-7 col-sm-7  col-xs-7">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-4 col-sm-4  col-xs-4">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-1.png">
+								</div>
+								<div class="hy-wfq-r col-md-7 col-sm-7  col-xs-7">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-4 col-sm-4  col-xs-4">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-1.png">
+								</div>
+								<div class="hy-wfq-r col-md-7 col-sm-7  col-xs-7">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-4 col-sm-4  col-xs-4">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-1.png">
+								</div>
+								<div class="hy-wfq-r col-md-7 col-sm-7  col-xs-7">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-4 col-sm-4  col-xs-4">
+									2018-06-12
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="hy-wfq-content col-md-4 col-sm-4 col-xs-4">
+						<div class="hy-wfq col-md-12 col-sm-12 col-xs-12">
+							<div class="hy-wfq-top col-md-12 col-sm-12 col-xs-12">
+								<div class="hy-wfq-img hy-wrl col-md-4 col-sm-4 col-xs-4">
+									已认领
+								</div>
+								<div class="hy-wfq-text col-md-8 col-sm-8 col-xs-8">1423件</div>
+							</div>
+
+						</div>
+						<ul class="col-md-12 col-sm-12 col-xs-12">
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-3.png">
+								</div>
+								<div class="hy-wfq-r col-md-7 col-sm-7  col-xs-7">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-4 col-sm-4  col-xs-4">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-2.png">
+								</div>
+								<div class="hy-wfq-r col-md-7 col-sm-7  col-xs-7">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-4 col-sm-4  col-xs-4">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-1.png">
+								</div>
+								<div class="hy-wfq-r col-md-7 col-sm-7  col-xs-7">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-4 col-sm-4  col-xs-4">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-1.png">
+								</div>
+								<div class="hy-wfq-r col-md-7 col-sm-7  col-xs-7">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-4 col-sm-4  col-xs-4">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-1.png">
+								</div>
+								<div class="hy-wfq-r col-md-7 col-sm-7  col-xs-7">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-4 col-sm-4  col-xs-4">
+									2018-06-12
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="hy-wfq-content hy-wfq-bn col-md-4 col-sm-4 col-xs-4">
+						<div class="hy-wfq col-md-12 col-sm-12 col-xs-12">
+							<div class="hy-wfq-top col-md-12 col-sm-12 col-xs-12">
+								<div class="hy-wfq-img hy-ybj hy-wrl col-md-4 col-sm-4 col-xs-4">
+									已办结
+								</div>
+								<div class="hy-wfq-text col-md-8 col-sm-8 col-xs-8">1423件</div>
+							</div>
+
+						</div>
+						<ul class="col-md-12 col-sm-12 col-xs-12">
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-3.png">
+								</div>
+								<div class="hy-wfq-r col-md-7 col-sm-7  col-xs-7">
+									我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-4 col-sm-4  col-xs-4">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-2.png">
+								</div>
+								<div class="hy-wfq-r col-md-7 col-sm-7  col-xs-7">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-4 col-sm-4  col-xs-4">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-1.png">
+								</div>
+								<div class="hy-wfq-r col-md-7 col-sm-7  col-xs-7">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-4 col-sm-4  col-xs-4">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-1.png">
+								</div>
+								<div class="hy-wfq-r col-md-7 col-sm-7  col-xs-7">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-4 col-sm-4  col-xs-4">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-1.png">
+								</div>
+								<div class="hy-wfq-r col-md-7 col-sm-7  col-xs-7">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-4 col-sm-4  col-xs-4">
+									2018-06-12
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<!-- 我认领的的 -->
+			<div class="header"> 
+	            <span class="page-header hy-page-header">
+	            我认领的
+	            </span>
+				<a href="javascript:;"><span class="hy-more">
+	                更多 >
+	            </span>
+	            </a>
+			</div>
+			<div class="dashboard-cards">
+				<div class="row">
+					
+					<div class="hy-wfq-content col-md-6 col-sm-6 col-xs-6">
+						<div class="hy-wfq col-md-12 col-sm-12 col-xs-12">
+							<div class="hy-wfq-top col-md-12 col-sm-12 col-xs-12">
+								<div class="hy-wfq-img col-md-4 col-sm-4 col-xs-4">
+									未办结
+								</div>
+								<div class="hy-wfq-text col-md-8 col-sm-8 col-xs-8">1423件</div>
+							</div>
+
+						</div>
+						<ul class="col-md-12 col-sm-12 col-xs-12">
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-3.png">
+								</div>
+								<div class="hy-wfq-r col-md-8 col-sm-8  col-xs-8">
+									我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-3 col-sm-3  col-xs-3">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-2.png">
+								</div>
+								<div class="hy-wfq-r col-md-8 col-sm-8  col-xs-8">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-3 col-sm-3  col-xs-3">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-1.png">
+								</div>
+								<div class="hy-wfq-r col-md-8 col-sm-8  col-xs-8">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-3 col-sm-3  col-xs-3">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-1.png">
+								</div>
+								<div class="hy-wfq-r col-md-8 col-sm-8  col-xs-8">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-3 col-sm-3  col-xs-3">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-1.png">
+								</div>
+								<div class="hy-wfq-r col-md-8 col-sm-8  col-xs-8">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-3 col-sm-3  col-xs-3">
+									2018-06-12
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="hy-wfq-content hy-wfq-bn col-md-6 col-sm-6 col-xs-6">
+						<div class="hy-wfq col-md-12 col-sm-12 col-xs-12">
+							<div class="hy-wfq-top col-md-12 col-sm-12 col-xs-12">
+								<div class="hy-wfq-img hy-ybj hy-wrl col-md-4 col-sm-4 col-xs-4">
+									已办结
+								</div>
+								<div class="hy-wfq-text col-md-8 col-sm-8 col-xs-8">1423件</div>
+							</div>
+
+						</div>
+						<ul class="col-md-12 col-sm-12 col-xs-12">
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-3.png">
+								</div>
+								<div class="hy-wfq-r col-md-8 col-sm-8  col-xs-8">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-3 col-sm-3  col-xs-3">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-2.png">
+								</div>
+								<div class="hy-wfq-r col-md-8 col-sm-8  col-xs-8">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-3 col-sm-3  col-xs-3">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-1.png">
+								</div>
+								<div class="hy-wfq-r col-md-8 col-sm-8  col-xs-8">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-3 col-sm-3  col-xs-3">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-3.png">
+								</div>
+								<div class="hy-wfq-r col-md-8 col-sm-8  col-xs-8">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-3 col-sm-3  col-xs-3">
+									2018-06-12
+								</div>
+							</li>
+							<li>
+								<div class="hy-wfq-l col-md-1 col-sm-1 col-xs-1">
+									<img src="../assets/img/jinjidu-3.png">
+								</div>
+								<div class="hy-wfq-r col-md-8 col-sm-8  col-xs-8">
+									我发起的未认领我发起的未认领
+								</div>
+								<div class="hy-wfq-t col-md-3 col-sm-3  col-xs-3">
+									2018-06-12
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->	
+	<!-- Bootstrap Js -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+	
+	<script src="../assets/materialize/js/materialize.min.js"></script>
+	
+    <!-- Metis Menu Js -->
+    <script src="../assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="../assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="../assets/js/morris/morris.js"></script>
+	
+	
+	<script src="../assets/js/easypiechart.js"></script>
+	<script src="../assets/js/easypiechart-data.js"></script>
+	
+	 <script src="../assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	
+    <!-- Custom Js -->
+    <script src="../assets/js/custom-scripts.js"></script> 
+ 
+
+</body>
+
+</html>

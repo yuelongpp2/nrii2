@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>内蒙古大型仪器-首页</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="./assets/materialize/css/materialize.min.css" media="screen,projection" />
+	<!-- Bootstrap Styles-->
+	<link href="./assets/css/bootstrap.css" rel="stylesheet" />
+	<!-- FontAwesome Styles-->
+	<link href="./assets/css/font-awesome.css" rel="stylesheet" />
+	<!-- Morris Chart Styles-->
+	<link href="./assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+	<!-- Custom Styles-->
+	<link href="./assets/css/custom-styles.css" rel="stylesheet" />
+	<!-- Google Fonts-->
+
+	<!-- 自定义样式 -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+	<link rel="stylesheet" href="./assets/js/Lightweight-Chart/cssCharts.css">
+	<!-- jQuery Js -->
+	<script src="./assets/js/jquery-1.10.2.js"></script>
+	<script src="./assets/js/echarts-all.js"></script>
+	<script src="./assets/js/index.js"></script>
+	<script type="text/javascript">
+		function logout(){
+			AuthUtils.logout();
+		}
+	</script>
+	<style>
+		.header {
+			border-bottom: 1px solid #1c2438;
+			min-width: 1200px;
+			height: 400px;
+		}
+		.header-center {
+			background-image: url(./assets/img/header_bg3.png);
+			background-size:100% 100%;
+			height: 80px;
+			line-height: 60px;
+			margin: 0 auto;
+		}
+		.header-bottom{
+			background-image: url(./assets/img/header_bg2.png);
+			background-size:100% 100%;
+			border-bottom: 1px solid #1c2438;
+			min-width: 1200px;
+			height: 320px;
+		}
+		.operations {
+			float: right;
+			text-align: right;
+			margin-right: 3%;
+		}
+	</style>
+</head>
+<body>
+<div id="wrapper">
+
+
+	<div class="header">
+		<div class="header-center">
+			<!-- <div class="logo3"><img src="../../../../assets/images/logo.png"/></div>-->
+			<!-- <Button class="button" type="ghost" size="large" icon="social-windows" @click="$router.push('/')">中国移动统一用户管理</Button> -->
+			<div class="operations">
+				<a href="javascript:;"><i class="glyphicon glyphicon-user"></i> <b>caoweijun</b>　|</a><a href="javascript:void" onclick="logout();"><b>退出</b></a>
+			</div>
+		</div>
+
+		<div class="header-bottom">
+
+		</div>
+	</div>
+<!--	<nav class="navbar navbar-default top-navbar" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle waves-effect waves-dark" data-toggle="collapse" data-target=".sidebar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand waves-effect waves-dark hy-logo" href="../index.html"><img src="./assets/img/logo.png"></a>
+
+			<div id="sideNav" href=""><i class="material-icons dp48"  style="display: none;">toc</i></div>
+		</div>
+
+		<ul class="nav  navbar-left" id="navTop">
+
+
+
+		</ul>
+
+		<ul class="nav navbar-top-links navbar-right">
+
+			<li><a href="javascript:;"><i class="glyphicon glyphicon-user"></i> <b>caoweijun</b>　|</a><a href="javascript:void" onclick="logout();"><b>退出</b></a></li>
+		</ul>
+	</nav>-->
+
+</div>
+<!-- /. WRAPPER  -->
+<!-- JS Scripts-->
+<!-- Bootstrap Js -->
+<script src="./assets/js/bootstrap.min.js"></script>
+
+<script src="./assets/materialize/js/materialize.min.js"></script>
+
+<!-- Metis Menu Js -->
+<script src="./assets/js/jquery.metisMenu.js"></script>
+<!-- Morris Chart Js -->
+<script src="./assets/js/morris/raphael-2.1.0.min.js"></script>
+<script src="./assets/js/morris/morris.js"></script>
+
+
+<script src="./assets/js/easypiechart.js"></script>
+<script src="./assets/js/easypiechart-data.js"></script>
+
+<script src="./assets/js/Lightweight-Chart/jquery.chart.js"></script>
+
+<!-- Custom Js -->
+<script src="./assets/js/custom-scripts.js"></script>
+
+
+</body>
+
+</html>

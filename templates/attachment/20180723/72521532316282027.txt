@@ -1,0 +1,83 @@
+1.开通策略
+2干成应用服务器，单独dds四个口 2个Ip
+
+
+
+http://cmtestapp1.hq.cmcc/tydb_yunoaMore4/
+http://cmtestapp1.hq.cmcc/tydb_yunoaMore4/jt_dy_more.html
+
+CREATE OR REPLACE 
+PROCEDURE UPDATESMSSENDCOUNT AS
+begin 
+  UPDATE COMPANY_TEMPTIMEFIELD SET (TEMPSENDCOUNT)=(SELECT SENDCOUNT FROM LOGINLIST WHERE LOGIN_ID=LOGINID) WHERE LOGINID IN (SELECT LOGIN_ID FROM LOGINLIST);
+end ;
+
+
+
+
+
+
+ public String studyPro(String moduleId) {
+        Map<String,String> map = new HashMap<String, String>();
+        map.put("mid",moduleId);//入参  mid为存储过程输入项
+        moduleMapper.studyPro(map);
+        String url = map.get("url");//过程出参值写在map里面.
+        return url;
+    }ModuleService
+
+
+
+public int selectSendCountIsTrue(final String mobileid, final int number) {
+	String sql = "{call GETUPDATESENDVALUE (?,?,?)}";
+	Integer obj = (Integer) getJdbcTemplate().execute(sql,
+			new CallableStatementCallback() {
+				public Object doInCallableStatement(CallableStatement cs)
+						throws SQLException, DataAccessException {
+					cs.setString(1, mobileid);
+					cs.setInt(2, number);
+					cs.registerOutParameter(3, OracleTypes.NUMBER);
+					if (cs.execute())
+						return new Integer(4);
+					return new Integer(cs.getInt(3));
+				}
+			});
+	return obj.intValue();
+}
+
+
+this.pnumberManager.getHibernateTemplate().execute(
+                new HibernateCallback() {
+                    public Object doInHibernate(Session session)
+                            throws HibernateException, SQLException {
+                        CallableStatement cs = session
+                                .connection()
+                                .prepareCall("{call modifyapppnumber_remain(?)}");
+                        cs.setString(1, foundationid);
+                        cs.execute();
+                        return null;
+                    }
+                });
+
+
+
+
+
+10658150 
+
+
+2005
+1BBAAB  CAA C  ABDCB       10
+ BBAAC  BCABA  ABDCB
+2
+
+
+
+
+
+571394762
+
+
+主数据
+http://10.1.16.180:7787/ssoServlet
+http://10.1.16.180:7787/ssoServlet
+http://10.1.16.180:7787/ssoServlet?total=total

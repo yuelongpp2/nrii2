@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>内蒙古大型仪器-首页</title> 
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/materialize/css/materialize.min.css" media="screen,projection" />
+    <!-- Bootstrap Styles-->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="../assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="../assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="../assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/hyPC.css">
+    <!-- 自定义样式 -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+    <link rel="stylesheet" href="../assets/js/Lightweight-Chart/cssCharts.css">
+        <!-- jQuery Js -->
+    <script src="../assets/js/jquery-1.10.2.js"></script>
+    <script src="../assets/js/echarts-all.js"></script>
+    <script src="../assets/js/index.js"></script>
+    <script type="text/javascript">
+	$(function(){
+	    $(".hy-wfq-content").find("li:even").addClass("hy-backC");
+	      var currTopHtml="instrument";
+          var currLeftHtml="importantNews";
+
+          var data = AuthUtils.get().manager;
+          var navTopHtml 		= '';
+          var navLeftHtml 		= '';
+         
+	       $.each(data.resources,function(index,array){
+                var id = array["id"];
+				var rsname = array["rsname"];
+				var rscode = array["rscode"];
+				var rsaddress = array["rsaddress"];
+			    var children = array["children"];
+              
+			    if(currTopHtml == rscode){
+			    	navTopHtml +='<li class="active"><a href="'+rsaddress+'" class="waves-effect waves-dark"><i ></i>'+rsname+'</a></li>';
+			    	if(children.length>0){
+                       $.each(children,function(index,array){
+                       	var id = array["id"];
+				        var rsname = array["rsname"];
+				        var rscode = array["rscode"];
+				        var rsaddress = array["rsaddress"];
+				       
+				        if(currLeftHtml == rscode){
+                          navLeftHtml +='<li class="active"><a href="'+rsaddress+'" class="waves-effect waves-dark"><i class="glyphicon glyphicon-home" ></i>'+rsname+'</a></li>';
+				        }else{
+				        	navLeftHtml +='<li ><a href="'+rsaddress+'" class="waves-effect waves-dark"><i ></i>'+rsname+'</a></li>';
+				        }
+                       })
+			    	}
+                    
+			    }else{
+			    	navTopHtml +='<li ><a href="'+rsaddress+'" class="waves-effect waves-dark"><i ></i>'+rsname+'</a></li>';
+			    }
+				
+
+	       })
+
+         $("#navTop").append(navTopHtml);
+ console.log(navLeftHtml)
+         $("#main-menu").append(navLeftHtml);
+         yirenling();
+	 }); 
+
+	function yirenling(){
+            var wrlHtml 		= '';
+           var listUrl = API_URL+'/role/page?time=' + new Date();
+           
+
+            $.ajax({
+                type:'get',
+                url: '../instrument.json',
+                dataType:'json',
+                success:function(data){
+                        $.each(data.page["records"],function(index,array){
+                            var innerId 				= array["innerId"];
+                            var cname 			= array["cname"];
+                            var technical 		= array["technical"];
+
+                            var image 		= array["image"];
+                            var roleLevel 	= array["nation"];
+                           
+                           var showHref ='';
+                         
+                            wrlHtml 			+='<tr>'
+                                    +'<td class="col-md-4 col-sm-4 col-xs-4 hy-wrl-text">'+innerId+'</td>'
+                                    +'<td class="col-md-1 col-sm-1 col-xs-1 hy-wrl-text">'+cname+'</td>'
+                                    +'<td class="col-md-1 col-sm-1 col-xs-1 hy-wrl-text"> <img id="img1"  src="../'+image+'" style="width:600px;height:240px;"/></td>'
+                                    +'<td class="col-md-1 col-sm-1 col-xs-1 hy-wrl-text"><div class="hy-date">'
+
+                                    +'<button type="bottom" class="btn btn-default hy-default" onclick="addResource('+roleLevel+')">资源管理</button>'
+                                    +'<button type="bottom" class="btn btn-default hy-default" onclick="addUser('+roleLevel+')">账号管理</button>'
+                                    +'</div></td></tr>';
+                          
+                        });
+
+                        $("#yirenling").html(wrlHtml);
+                   
+
+                },
+                error:function(){
+                    alert("数据加载失败！")
+                }
+            })
+        }
+	</script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle waves-effect waves-dark" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand waves-effect waves-dark hy-logo" href="../index.html"><img src="../assets/img/logo.png"></a>
+				
+				<div id="sideNav" href=""><i class="material-icons dp48"  style="display: none;">toc</i></div>
+            </div>
+
+<ul class="nav  navbar-left" id="navTop">
+            
+	
+
+            </ul>
+            
+            <ul class="nav navbar-top-links navbar-right">
+
+				<li><a href="javascript:;"><i class="glyphicon glyphicon-user"></i> <b>caoweijun</b>　|</a><a href="#"><b>退出</b></a></li>
+            </ul>
+        </nav>
+
+
+        <!-- /. NAV SIDE  -->
+      
+		<div id="page-wrapper">
+		<div class="header"> 
+              <table class="table table-striped table-hover hy-yrl-table">
+                <thead>
+                    <th class="col-md-4 col-sm-4 col-xs-4">ID</th>
+                    <th class="col-md-2 col-sm-2 col-xs-2">仪器名称</th>
+                    <th class="col-md-2 col-sm-2 col-xs-2">角色Code</th>
+                    <th class="col-md-2 col-sm-2 col-xs-2">操作</th>
+                </thead>
+                <tbody id="yirenling">
+               
+
+                </tbody>
+              </table>
+			</div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->	
+	<!-- Bootstrap Js -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+	
+	<script src="../assets/materialize/js/materialize.min.js"></script>
+	
+    <!-- Metis Menu Js -->
+    <script src="../assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="../assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="../assets/js/morris/morris.js"></script>
+	
+	
+	<script src="../assets/js/easypiechart.js"></script>
+	<script src="../assets/js/easypiechart-data.js"></script>
+	
+	 <script src="../assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	
+    <!-- Custom Js -->
+    <script src="../assets/js/custom-scripts.js"></script> 
+ 
+
+</body>
+
+</html>

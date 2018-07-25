@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Insert title here</title>
+        <!--javascript中定义一个点击就换图片的方法-->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="assets/js/echarts-all.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script type="text/javascript">
+     $(function(){
+        change();
+     });
+   
+        function change()
+        {
+            var img=document.getElementById("image");
+            //切换验证码的原理是点击就重新将src设置一下，但是浏览器有缓存，所以我们需要在后面添加                     一个参数来让浏览器不断发送请求，后面加的参数为时间，因为时间是不断变化的
+            img.src= API_URL+"/getVerify?a="+new Date().getTime();
+
+            $("#footer").load("top.html")
+
+        }
+        
+        //获取验证码
+        function login(){
+            
+
+            var url = API_URL+'/login';
+            var userId      = $("#userId").val();//提出人ID
+            var password         = $("#password").val();//提出人
+            var verifyStr             = $("#verifyStr").val();//主题
+            var data = {"userId":userId,"password":password,"verifyStr":verifyStr};
+       
+            var headers= {"userId":userId,"password":password,"Content-Type":"text/plain;charset=UTF-8"};
+            var headers2 = AuthUtils.getHeaders();
+            console.log(headers);
+            console.log(headers2);
+            $.ajax({
+                type:'post',
+                url: url,
+                data: data,
+                dataType:'json',
+                headers:headers2,
+                success:function(data){
+                    if (data.code === 200) {
+                       AuthUtils.login(data.data,data.token);
+                    }
+                },
+                error:function(){
+                    
+                }
+           });
+        }
+
+        function logout(){
+            AuthUtils.logout();
+        }
+    </script>
+
+    </head>
+    <body>
+        <h1>登陆页面</h1>
+        <form >
+        用户名:<input type="text" id="userId" name="userId"><br/>
+        密   码:<input type="password" id="password" name="password"><br/>
+        验证码:<input type="text" id="verifyStr" name="verifyStr" size="3">
+          
+        <a href="javascript:change()">
+          <img src="javascript:void()" id="image"> 
+        看不清，换一张</a>  
+        <br/>
+        </form>
+        
+         <input type="button" value="登陆" onclick="login();">
+
+
+ <div id="wrapper">
+    
+         <input type="button" value="注销" onclick="logout();">
+    </div>
+
+     <div id="footer">
+    
+    </div>
+    </body>
+</html>
